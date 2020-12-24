@@ -1,0 +1,48 @@
+.spacer
+{
+    margin-top: 50px;
+}
+
+.spacer_1
+{
+    margin-top: 25px;
+}
+
+.logo
+{
+    width: 50%;
+}
+
+.footer
+{
+
+}
+
+.side
+{
+    height: 100% ;
+  
+}
+
+.sidiv
+{
+    position: fixed;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+  }
+  body {
+    min-height: 100%;
+    min-width: 100%;
+  }
+
+  .listProduct img
+  {
+      height: 250px;
+  }
+
+  a:hover{
+      text-decoration: none;
+  }
