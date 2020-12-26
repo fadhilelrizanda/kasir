@@ -26,11 +26,11 @@
                         <p class="titleProduct bgcolorneo">
                             {{ Auth::user()->name }}
                         </p>
-    
+
                     </div>
                     @endauth
                     @endif
-                    <div class="row btnhov" >
+                    <div class="row btnhov">
                         <div class="col-md-12">
                             <a href="{{ route('posts.index') }}"><button type="button" class="p-3 btn btn-block bgcolorneo spacer">Home</button> </a>
                         </div>
@@ -59,7 +59,7 @@
 
                     <div class="row btnhov">
                         <div class="col-md-12">
-                            <a href="{{ route('posts.create') }}">
+                            <a href="/create">
                                 <button type="button" class="p-3 btn btn-block bgcolorneo spacer_1">Masukkan Produk</button>
                             </a>
                         </div>
@@ -76,7 +76,7 @@
                     <div class="row btnlog btnhov">
                         <div class="col-md-12">
                             <a href="{{ route('logout') }}">
-                                <button type="button" class="p-3 btn btn-block bgcolorneo spacer_1"  onclick="event.preventDefault();
+                                <button type="button" class="p-3 btn btn-block bgcolorneo spacer_1" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"> {{ __('Logout') }}</button>
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,5 +25,17 @@ class HomeController extends Controller
     public function index()
     {
         return redirect()->route('/');
+    }
+
+    public function manage()
+    {
+        $controller = new PostController;
+        return $controller->manajemen();
+    }
+
+    public function input()
+    {
+        $controller = new PostController;
+        return $controller->create();
     }
 }

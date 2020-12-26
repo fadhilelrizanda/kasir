@@ -22,7 +22,9 @@ use App\Http\Controllers\PostController;
 Route::resource('posts', PostController::class);
 Route::get('download/{id}', [PostController::class, 'downloadFiles']);
 
-Route::get('manajemen', [PostController::class, 'manajemen']);
+Route::get('/manajemen', [App\Http\Controllers\HomeController::class, 'manage']);
+Route::get('/create',  [App\Http\Controllers\HomeController::class, 'input']);
+
 Route::get('delete/{id}', [PostController::class, 'destroy']);
 Route::get('/', [PostController::class, 'index'])->name('/');
 Route::get('edit/{id}', [PostController::class, 'edit']);

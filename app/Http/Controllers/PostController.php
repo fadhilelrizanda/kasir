@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
+use File;
 
 class PostController extends Controller
 {
@@ -119,6 +120,8 @@ class PostController extends Controller
         $data = new Post();
         $datas  = $data::find($id);
         $datas->delete();
+        $gambarName = $datas->path_img;
+        File::delete(public_path('images/' . $gambarName));
 
         return redirect()->route('posts.index')
             ->with('success', 'Produk berhasil di hapus');
