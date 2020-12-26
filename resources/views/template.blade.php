@@ -5,74 +5,83 @@
     <title>Produk Kasir Online </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="{{ url('/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url('/fontawesome-free/css/all.min.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-md-3 position-sticky">
-            <div class="card text-white bg-primary side">
-                <div class="card-header text-center">Produk Kasir Online Kita</div>
+    <div class="row main-sid">
+        <div class="col-md-3 position-sticky sidiv">
+            <div class="card text-white bgcolor side ">
+                <div class="card-header text-center">Waroeng Komputer</div>
                 <div class="card-body">
                     <div class="row ">
                         <div class="col-md-12 text-center">
-                            <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-social-logo.png" class="logo rounded mx-auto" alt="Responsive image">
+                            <img src="{{ url('/images/logo.png') }}" class="logo rounded mx-auto" alt="Responsive image">
                         </div>
                     </div>
                     @if (Route::has('login'))
                     @auth
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
+                    <div class="userName text-center bgcolorneo">
+                        <p class="titleProduct bgcolorneo">
+                            {{ Auth::user()->name }}
+                        </p>
+    
                     </div>
                     @endauth
                     @endif
-                    <div class="row">
+                    <div class="row btnhov" >
                         <div class="col-md-12">
-                            <a href="{{ route('posts.index') }}"><button type="button" class="btn btn-block btn-danger spacer">Home</button> </a>
+                            <a href="{{ route('posts.index') }}"><button type="button" class="p-3 btn btn-block bgcolorneo spacer">Home</button> </a>
                         </div>
                     </div>
 
-                    <div class="row">
+
+                    @guest
+                    <div class="row btnhov">
                         <div class="col-md-12">
                             <a href="{{ route('login') }}">
-                                <button type="button" class="btn btn-block btn-danger spacer_1">Login</button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <a href="{{ route('register') }}">
-                                <button type="button" class="btn btn-block btn-danger spacer_1">Register</button>
+                                <button type="button" class="p-3 btn btn-block bgcolorneo spacer_1">Login</button>
                             </a>
                         </div>
                     </div>
 
+                    <div class="row btnhov">
+                        <div class="col-md-12">
+                            <a href="{{ route('register') }}">
+                                <button type="button" class="p-3 btn btn-block bgcolorneo spacer_1">Register</button>
+                            </a>
+                        </div>
+                    </div>
+                    @endguest
                     @if (Route::has('login'))
                     @auth
 
-                    <div class="row">
+                    <div class="row btnhov">
                         <div class="col-md-12">
                             <a href="{{ route('posts.create') }}">
-                                <button type="button" class="btn btn-block btn-danger spacer_1">Masukkan Produk</button>
+                                <button type="button" class="p-3 btn btn-block bgcolorneo spacer_1">Masukkan Produk</button>
                             </a>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
+                    <div class="row btnhov">
+                        <div class="col-md-12 ">
                             <a href="/manajemen">
-                                <button type="button" class="btn btn-block btn-danger spacer_1">Manajemen Produk</button>
+                                <button type="button" class="btn p-3 btn-block bgcolorneo spacer_1">Manajemen Produk</button>
                             </a>
+                        </div>
+                    </div>
+
+                    <div class="row btnlog btnhov">
+                        <div class="col-md-12">
+                            <a href="{{ route('logout') }}">
+                                <button type="button" class="p-3 btn btn-block bgcolorneo spacer_1"  onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"> {{ __('Logout') }}</button>
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </div>
                     </div>
 
@@ -85,14 +94,14 @@
 
         </div>
         <div class="col-md-8">
-            <div class="container card bg-light">
+            <div class="container card bg-light spacer">
                 @yield('content')
 
             </div>
         </div>
 
     </div>
-    <div class="row footer  ">
+    <div class="row footer spacer">
         <div class="col-md-12">
             <p class="text-center">Created By Kelompok 4 </p>
         </div>

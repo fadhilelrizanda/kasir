@@ -3,7 +3,7 @@
 @section('content')
 
 @if ($errors->any())
-<div class="alert alert-danger">
+<div class="alert bgcolor">
     <strong>Whoops!</strong> There were some problems with your input.<br><br>
     <ul>
         @foreach ($errors->all() as $error)
@@ -16,7 +16,7 @@
 <div class="spacer"></div>
 <div class="row">
     <div class="col-md-12">
-        <h1 class="text-center">Input data produk</h1>
+        <h1 class="text-center">Masukkan data produk</h1>
     </div>
 
 </div>
@@ -37,16 +37,16 @@
         <div class="col-md-12">
             <label for="exampleInputEmail1">Deskripsi</label>
             <div class="form-group">
-                <textarea type="text" name="desk" class="form-control" placeholder="08xxx" required></textarea>
+                <textarea type="text" name="desk" class="form-control" placeholder="Produk ini didesain agar kinerja komputer menjadi cepat" required></textarea>
             </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-            <label for="exampleInputEmail1">Harga</label>
+            <label for="exampleInputEmail1">Harga (dalam dollar) </label>
             <div class="form-group">
-                <input type="number" name="harga" class="form-control" placeholder="Padang" required>
+                <input type="number" name="harga" class="form-control" placeholder="10" required>
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@
         <div class="col-md-12">
             <label for="exampleInputEmail1">Jumlah</label>
             <div class="form-group">
-                <input type="number" name="jumlah" class="form-control" placeholder="Padang" required>
+                <input type="number" name="jumlah" class="form-control" placeholder="10" required>
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@
     <input type="file" name="gambar" placeholder="Choose image" id="image" required>
     <br /><br /><br />
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        <button type="submit" class="btn bgcolor btn-block">Submit</button>
     </div>
     </div>
 

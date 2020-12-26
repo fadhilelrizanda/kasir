@@ -13,17 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 use App\Http\Controllers\PostController;
 
 Route::resource('posts', PostController::class);
 Route::get('download/{id}', [PostController::class, 'downloadFiles']);
+
 Route::get('manajemen', [PostController::class, 'manajemen']);
 Route::get('delete/{id}', [PostController::class, 'destroy']);
+Route::get('/', [PostController::class, 'index'])->name('/');
 Route::get('edit/{id}', [PostController::class, 'edit']);
+Route::post('update/{id}', [PostController::class, 'update']);
 
 Auth::routes();
 

@@ -12,7 +12,7 @@
 <div class="row">
     <div class="col-md-12">
         <table class="table">
-            <thead class="thead-dark">
+            <thead class="bgcolor">
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">Nama</th>
@@ -34,7 +34,7 @@
                     <td>{{$post->jumlah}}</td>
                     <td>
                         <a href="{{ url('edit',$post->id)}}">
-                            <button type="button" class="btn btn-danger ">Update</button>
+                            <button type="button" class="btn btn-info ">Update</button>
                         </a>
                         <a href="{{ url('delete',$post->id)}}">
                             <button type="button" class="btn btn-danger ">Delete</button>

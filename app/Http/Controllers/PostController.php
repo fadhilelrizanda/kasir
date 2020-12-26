@@ -40,7 +40,7 @@ class PostController extends Controller
             'desk' => 'required',
             'harga' => 'required',
             'jumlah' => 'required',
-            'gambar' => 'required',
+            'gambar' => 'required|mimes:jpg,png|max:2048',
         ]);
 
         $gambarName = time() . '.' . $request->gambar->extension();
@@ -56,7 +56,7 @@ class PostController extends Controller
         $data->save();
 
         return redirect()->route('posts.index')
-            ->with('success', 'Post created successfully.');
+            ->with('success', 'Data produk berhasil ditambahkan !.');
     }
 
     public function show(Post $post)
@@ -71,7 +71,37 @@ class PostController extends Controller
         return view('posts.edit', compact('post'));
     }
 
-    public function update(Request $request, Post $post)
+
+    public function update($id, Request $request)
+    {
+        $request->validate([
+            'nama' => 'required',
+            'desk' => 'required',
+            'harga' => 'required',
+            'jumlah' => 'required',
+            'gambar' => 'required|mimes:jpg,png|max:2048',
+        ]);
+
+        $gambarName = time() . '.' . $request->gambar->extension();
+        $request->gambar->move(public_path('images'), $gambarName);
+
+        $data = new Post();
+        $datas  = $data::find($id);
+        $datas->nama = $request->get('nama');
+        $datas->deskripsi = $request->get('desk');
+        $datas->harga = $request->get('harga');
+        $datas->jumlah = $request->get('jumlah');
+        $datas->path_img = $gambarName;
+
+        $datas->save();
+
+
+
+        return redirect()->route('posts.index')
+            ->with('success', 'Produk berhasil di update');
+    }
+
+    public function update2(Request $request, Post $post)
     {
         $request->validate([
             'title' => 'required',
@@ -91,7 +121,7 @@ class PostController extends Controller
         $datas->delete();
 
         return redirect()->route('posts.index')
-            ->with('success', 'Post deleted successfully');
+            ->with('success', 'Produk berhasil di hapus');
     }
 
     public function downloadFiles($id)

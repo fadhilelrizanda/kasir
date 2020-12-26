@@ -15,8 +15,13 @@
 
 .footer
 {
+    background-color: #407D9F;
 
+    position: absolute;
+    text-align: center;
+    width: 100%;
 }
+
 
 .side
 {
@@ -24,25 +29,84 @@
   
 }
 
-.sidiv
+.main-sid
 {
-    position: fixed;
+
+height: 100%;
+width: 100%;
 }
 
 html {
     height: 100%;
     width: 100%;
+  font-weight: 300;
   }
   body {
     min-height: 100%;
     min-width: 100%;
+    font-weight: 300;
   }
 
   .listProduct img
   {
-      height: 250px;
+      height: 350px;
   }
 
   a:hover{
       text-decoration: none;
   }
+
+ 
+  .userName p
+  {
+      text-decoration: none;
+      color: white;
+      font-weight: 300;
+      font-size: 20px;
+      margin-top:20px;
+      text-transform:capitalize;
+      padding:8px;
+  
+  }
+
+  .titleProduct
+  {
+font-weight: 300;
+  }
+
+.container
+{
+    min-height: 800px;
+}
+
+.bgcolor
+{
+    background-color:#407D9F;
+    color:#FFFFFF;
+}
+
+.btnlog
+{
+    bottom:0%;
+    position:absolute;
+    width:100%;
+    margin-bottom:20px;
+
+}
+
+.bgcolorneo
+{
+    border-radius: 5px;
+background: #407D9F;
+box-shadow: inset 20px 20px 60px #366a87, 
+            inset -20px -20px 60px #4a90b7;
+              color:#FFFFFF;
+}
+
+.btnhov button:hover
+{
+border-radius: 10px;
+background: linear-gradient(145deg, #4486aa, #3a718f);
+box-shadow:  20px 20px 60px #366a87, 
+             -20px -20px 60px #4a90b7;
+}

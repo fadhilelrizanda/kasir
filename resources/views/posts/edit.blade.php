@@ -3,7 +3,7 @@
 @section('content')
 
 @if ($errors->any())
-<div class="alert alert-danger">
+<div class="alert bgcolor">
     <strong>Whoops!</strong> There were some problems with your input.<br><br>
     <ul>
         @foreach ($errors->all() as $error)
@@ -21,9 +21,9 @@
 
 </div>
 <div class="spacer"></div>
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="{{ url('update',$post->id)}}" method="POST" enctype="multipart/form-data">
     @csrf
-    @method('PUT')
+
     <div class="row">
         <div class="col-md-12">
             <label for="exampleInputEmail1">Nama Produk</label>
@@ -64,7 +64,7 @@
     <input type="file" name="gambar" placeholder="Choose image" id="image" required>
     <br /><br /><br />
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        <button type="submit" class="btn bgcolor btn-block">Submit</button>
     </div>
     </div>
 
